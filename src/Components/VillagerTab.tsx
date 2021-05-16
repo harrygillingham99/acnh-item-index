@@ -40,7 +40,7 @@ export const VillagerTab = () => {
     (async () => {
       try {
         setState({ loading: true });
-        var villagers = fetchAsync<Villager[]>(
+        const villagers = fetchAsync<Villager[]>(
           "http://acnhapi.com/v1a/villagers"
         );
         if (isMounted) setState({ villagers: await villagers });
@@ -76,7 +76,7 @@ export const VillagerTab = () => {
     transform: [filterByProperty],
   });
 
-  let searchRef = React.createRef<Typeahead<string>>();
+  const searchRef = React.createRef<Typeahead<string>>();
 
   const villagerNames =
     state.villagers &&

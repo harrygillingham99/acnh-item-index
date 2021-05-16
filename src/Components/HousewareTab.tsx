@@ -39,7 +39,7 @@ export const HousewareTab = () => {
     (async () => {
       try {
         setState({ loading: true });
-        var items = fetchAsync<HousewareItem[][]>(
+        const items = fetchAsync<HousewareItem[][]>(
           "http://acnhapi.com/v1a/houseware"
         );
         if (isMounted) setState({ items: (await items).flat() });
@@ -75,7 +75,7 @@ export const HousewareTab = () => {
     transform: [filterByProperty],
   });
 
-  let searchRef = React.createRef<Typeahead<string>>();
+  const searchRef = React.createRef<Typeahead<string>>();
 
   const itemNames =
     state.items &&

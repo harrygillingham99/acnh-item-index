@@ -43,7 +43,7 @@ export function ItemTab<T extends AnimalCrossingMonthlyItem>({
     (async () => {
       try {
         setState({ loading: true });
-        var items = fetchAsync<T[]>(fetchUrl);
+        const items = fetchAsync<T[]>(fetchUrl);
         if (isMounted) setState({ items: await items });
       } catch (error) {
         toast.error("Error fetching items from " + fetchUrl);
@@ -77,7 +77,7 @@ export function ItemTab<T extends AnimalCrossingMonthlyItem>({
     transform: [filterByProperty],
   });
 
-  let searchRef = React.createRef<Typeahead<string>>();
+  const searchRef = React.createRef<Typeahead<string>>();
 
   const itemNames =
     state.items && transformed.map((item) => item.name["name-EUen"]);
