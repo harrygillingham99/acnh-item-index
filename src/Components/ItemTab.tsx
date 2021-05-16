@@ -9,7 +9,7 @@ import { useEffectOnce, useSetState } from "react-use";
 import fetchAsync from "../utils/Fetch";
 import { months } from "../types/Dates";
 import { toast } from "react-toastify";
-import { AnimalCrossingItem } from "../types/AHCN-API/Shared";
+import { AnimalCrossingMonthlyItem } from "../types/AHCN-API/Shared";
 import { Loader } from "./Loader";
 
 interface ItemTabState<T> {
@@ -28,7 +28,7 @@ interface TransformData {
   month?: number;
 }
 
-export function ItemTab<T extends AnimalCrossingItem>({
+export function ItemTab<T extends AnimalCrossingMonthlyItem>({
   fetchUrl,
   itemCardBuilder,
   itemTypeName,
@@ -55,7 +55,6 @@ export function ItemTab<T extends AnimalCrossingItem>({
         };
       }
     })();
-  
   });
 
   const filterByProperty: MapTransformer<T, TransformData> =

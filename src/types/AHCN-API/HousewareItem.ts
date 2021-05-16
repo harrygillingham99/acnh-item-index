@@ -1,0 +1,34 @@
+import { AnimalCrossingItem, Name } from "./Shared";
+export interface HousewareItem extends AnimalCrossingItem {
+  variant?: any;
+  "body-title"?: any;
+  pattern?: any;
+  "pattern-title"?: any;
+  isDIY: boolean;
+  canCustomizeBody: boolean;
+  canCustomizePattern: boolean;
+  "kit-cost"?: any;
+  "color-1": string;
+  "color-2": string;
+  size: string;
+  "miles-price"?: any;
+  source: string;
+  "source-detail": string;
+  version: string;
+  "hha-concept-1": string;
+  "hha-concept-2"?: any;
+  "hha-series"?: any;
+  "hha-set"?: any;
+  isInteractive: boolean;
+  tag: string;
+  isOutdoor: boolean;
+  "speaker-type"?: any;
+  "lighting-type"?: any;
+  isCatalog: boolean;
+  "file-name": string;
+  "variant-id"?: any;
+  "internal-id": number;
+  name: Name;
+  "buy-price": number;
+  "sell-price": number;
+}

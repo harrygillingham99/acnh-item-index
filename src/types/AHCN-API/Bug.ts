@@ -1,12 +1,11 @@
-import { AnimalCrossingItem, Availability, Name } from "./Shared";
+import { AnimalCrossingMonthlyItem } from "./Shared";
 
-export interface Bug extends AnimalCrossingItem {
+export interface Bug extends AnimalCrossingMonthlyItem {
   id: number;
   "file-name": string;
   price: number;
   "price-flick": number;
   "catch-phrase": string;
   "museum-phrase": string;
-  image_uri: string;
   icon_uri: string;
 }

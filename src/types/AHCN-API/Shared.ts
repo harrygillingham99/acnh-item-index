@@ -17,6 +17,10 @@ export interface Name {
 
 export interface AnimalCrossingItem {
   name: Name;
+  image_uri: string;
+}
+
+export interface AnimalCrossingMonthlyItem extends AnimalCrossingItem {
   availability: Availability;
 }
 

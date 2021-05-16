@@ -1,6 +1,6 @@
-import { AnimalCrossingItem, Availability, Name } from "./Shared";
+import { AnimalCrossingMonthlyItem } from "./Shared";
 
-export interface Fish extends AnimalCrossingItem {
+export interface Fish extends AnimalCrossingMonthlyItem {
   id: number;
   "file-name": string;
   shadow: string;
@@ -8,6 +8,5 @@ export interface Fish extends AnimalCrossingItem {
   "price-cj": number;
   "catch-phrase": string;
   "museum-phrase": string;
-  image_uri: string;
   icon_uri: string;
 }

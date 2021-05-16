@@ -17,6 +17,7 @@ import { distinctProperty } from "../utils/Array";
 import { useEffectOnce, useSetState } from "react-use";
 import fetchAsync from "../utils/Fetch";
 import { Loader } from "./Loader";
+import { toast } from "react-toastify";
 
 interface VillagerState {
   villagers: Villager[];
@@ -44,6 +45,7 @@ export const VillagerTab = () => {
         );
         if (isMounted) setState({ villagers: await villagers });
       } catch (error) {
+        toast.error("Error fetching villagers");
       } finally {
         setState({ loading: false });
       }

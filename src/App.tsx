@@ -9,6 +9,7 @@ import { ItemTab } from "./Components/ItemTab";
 import { FishCard } from "./Components/Cards/FishCard";
 import { SeaCreatureCard } from "./Components/Cards/SeaCreatureCard";
 import { BugCard } from "./Components/Cards/BugCard";
+import { HousewareTab } from "./Components/HousewareTab";
 
 interface AppState {
   activeTab: TabNames;
@@ -19,6 +20,7 @@ enum TabNames {
   Fish = "Fish",
   Bugs = "Bugs",
   SeaCreatures = "Sea Creatures",
+  Houseware = "Houseware",
 }
 
 export default function App() {
@@ -72,6 +74,9 @@ export default function App() {
                 itemCardBuilder={SeaCreatureCard}
               />
             )}
+          </Tab>
+          <Tab eventKey={TabNames.Houseware} title={TabNames.Houseware}>
+            {state.activeTab === TabNames.Houseware && <HousewareTab />}
           </Tab>
         </Tabs>
       </Container>
