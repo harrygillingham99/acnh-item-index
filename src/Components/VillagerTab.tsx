@@ -16,7 +16,7 @@ import { Villager } from "../types/AHCN-API/Villager";
 import { distinctProperty } from "../utils/Array";
 import { useEffectOnce, useSetState } from "react-use";
 import fetchAsync from "../utils/Fetch";
-import { Loader } from "./Loader";
+import { Loader } from "../components/Loader";
 import { toast } from "react-toastify";
 import { ApiUrl } from "../types/Urls";
 

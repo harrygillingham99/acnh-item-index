@@ -10,7 +10,7 @@ import fetchAsync from "../utils/Fetch";
 import { months } from "../types/Dates";
 import { toast } from "react-toastify";
 import { AnimalCrossingMonthlyItem } from "../types/AHCN-API/Shared";
-import { Loader } from "./Loader";
+import { Loader } from "../components/Loader";
 import { ApiUrl } from "../types/Urls";
 
 interface ItemTabState<T> {

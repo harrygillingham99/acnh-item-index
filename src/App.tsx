@@ -4,12 +4,12 @@ import { Container, Tabs, Tab } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "react-bootstrap-typeahead/css/Typeahead.css";
-import { VillagerTab } from "./Components/VillagerTab";
-import { ItemTab } from "./Components/ItemTab";
-import { FishCard } from "./Components/Cards/FishCard";
-import { SeaCreatureCard } from "./Components/Cards/SeaCreatureCard";
-import { BugCard } from "./Components/Cards/BugCard";
-import { HousewareTab } from "./Components/HousewareTab";
+import { VillagerTab } from "./components/VillagerTab";
+import { ItemTab } from "./components/ItemTab";
+import { FishCard } from "./components/cards/FishCard";
+import { SeaCreatureCard } from "./components/cards/SeaCreatureCard";
+import { BugCard } from "./components/cards/BugCard";
+import { HousewareTab } from "./components/HousewareTab";
 import { ApiUrl } from "./types/Urls";
 
 interface AppState {
