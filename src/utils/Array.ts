@@ -5,5 +5,6 @@ export const distinctProperty = <T, Tprop>(
   arr
     .map(predicate)
     .filter(
-      <T>(value: T, index: number, self: T[]) => self.indexOf(value) === index
+      (value: Tprop, index: number, self: Tprop[]) =>
+        self.indexOf(value) === index
     );
