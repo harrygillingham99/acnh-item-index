@@ -18,6 +18,7 @@ import { useEffectOnce, useSetState } from "react-use";
 import fetchAsync from "../utils/Fetch";
 import { Loader } from "./Loader";
 import { toast } from "react-toastify";
+import { ApiUrl } from "../types/Urls";
 
 interface HousewareState {
   items: HousewareItem[];
@@ -39,9 +40,7 @@ export const HousewareTab = () => {
     (async () => {
       try {
         setState({ loading: true });
-        const items = fetchAsync<HousewareItem[][]>(
-          "http://acnhapi.com/v1a/houseware"
-        );
+        const items = fetchAsync<HousewareItem[][]>(ApiUrl.Houseware);
         if (isMounted) setState({ items: (await items).flat() });
       } catch (error) {
         toast.error("Error getting houseware items");

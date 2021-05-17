@@ -10,6 +10,7 @@ import { FishCard } from "./Components/Cards/FishCard";
 import { SeaCreatureCard } from "./Components/Cards/SeaCreatureCard";
 import { BugCard } from "./Components/Cards/BugCard";
 import { HousewareTab } from "./Components/HousewareTab";
+import { ApiUrl } from "./types/Urls";
 
 interface AppState {
   activeTab: TabNames;
@@ -51,7 +52,7 @@ export default function App() {
           <Tab eventKey={TabNames.Fish} title={TabNames.Fish}>
             {state.activeTab === TabNames.Fish && (
               <ItemTab
-                fetchUrl="http://acnhapi.com/v1a/fish"
+                fetchUrl={ApiUrl.Fish}
                 itemTypeName="fish"
                 itemCardBuilder={FishCard}
               />
@@ -60,7 +61,7 @@ export default function App() {
           <Tab eventKey={TabNames.Bugs} title={TabNames.Bugs}>
             {state.activeTab === TabNames.Bugs && (
               <ItemTab
-                fetchUrl="http://acnhapi.com/v1a/bugs"
+                fetchUrl={ApiUrl.Bugs}
                 itemTypeName="bug"
                 itemCardBuilder={BugCard}
               />
@@ -69,7 +70,7 @@ export default function App() {
           <Tab eventKey={TabNames.SeaCreatures} title={TabNames.SeaCreatures}>
             {state.activeTab === TabNames.SeaCreatures && (
               <ItemTab
-                fetchUrl="http://acnhapi.com/v1a/sea"
+                fetchUrl={ApiUrl.SeaCreatures}
                 itemTypeName="sea creature"
                 itemCardBuilder={SeaCreatureCard}
               />

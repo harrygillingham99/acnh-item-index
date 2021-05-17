@@ -11,6 +11,7 @@ import { months } from "../types/Dates";
 import { toast } from "react-toastify";
 import { AnimalCrossingMonthlyItem } from "../types/AHCN-API/Shared";
 import { Loader } from "./Loader";
+import { ApiUrl } from "../types/Urls";
 
 interface ItemTabState<T> {
   items: T[];
@@ -19,7 +20,7 @@ interface ItemTabState<T> {
 }
 
 interface ItemTabProps<T> {
-  fetchUrl: string;
+  fetchUrl: string & ApiUrl;
   itemTypeName: "bug" | "fish" | "sea creature";
   itemCardBuilder: (item: T) => JSX.Element;
 }

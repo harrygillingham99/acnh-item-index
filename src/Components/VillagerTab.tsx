@@ -18,6 +18,7 @@ import { useEffectOnce, useSetState } from "react-use";
 import fetchAsync from "../utils/Fetch";
 import { Loader } from "./Loader";
 import { toast } from "react-toastify";
+import { ApiUrl } from "../types/Urls";
 
 interface VillagerState {
   villagers: Villager[];
@@ -39,9 +40,7 @@ export const VillagerTab = () => {
     (async () => {
       try {
         setState({ loading: true });
-        const villagers = fetchAsync<Villager[]>(
-          "http://acnhapi.com/v1a/villagers"
-        );
+        const villagers = fetchAsync<Villager[]>(ApiUrl.Villagers);
         if (isMounted) setState({ villagers: await villagers });
       } catch (error) {
         toast.error("Error fetching villagers");
