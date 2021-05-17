@@ -123,7 +123,7 @@ export const WallmountedItemTab = () => {
   return state.loading ? (
     <Loader />
   ) : (
-    state.items && tags && (
+    state.items && tags && sources && (
       <>
         <Row className="mt-2 ml-auto mr-auto">
           <Col>
