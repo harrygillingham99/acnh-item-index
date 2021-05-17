@@ -27,7 +27,6 @@ interface VillagerState {
 
 interface TransformData {
   species?: string;
-  gender?: string;
 }
 
 export const VillagerTab = () => {
