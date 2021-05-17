@@ -11,6 +11,7 @@ import { SeaCreatureCard } from "./components/cards/SeaCreatureCard";
 import { BugCard } from "./components/cards/BugCard";
 import { HousewareTab } from "./components/HousewareTab";
 import { ApiUrl } from "./types/Urls";
+import { WallmountedItemTab } from "./components/WallmountedItemTab";
 
 interface AppState {
   activeTab: TabNames;
@@ -22,6 +23,7 @@ enum TabNames {
   Bugs = "Bugs",
   SeaCreatures = "Sea Creatures",
   Houseware = "Houseware",
+  Wallmounted = "Wallmounted Items",
 }
 
 export default function App() {
@@ -78,6 +80,9 @@ export default function App() {
           </Tab>
           <Tab eventKey={TabNames.Houseware} title={TabNames.Houseware}>
             {state.activeTab === TabNames.Houseware && <HousewareTab />}
+          </Tab>
+          <Tab eventKey={TabNames.Wallmounted} title={TabNames.Wallmounted}>
+            {state.activeTab === TabNames.Wallmounted && <WallmountedItemTab />}
           </Tab>
         </Tabs>
       </Container>

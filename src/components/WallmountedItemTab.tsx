@@ -20,9 +20,10 @@ import fetchAsync from "../utils/Fetch";
 import { Loader } from "../components/Loader";
 import { toast } from "react-toastify";
 import { ApiUrl } from "../types/Urls";
+import { WallmountedItem } from "../types/AHCN-API/WallmountedItem";
 
-interface HousewareState {
-  items: HousewareItem[];
+interface ItemState {
+  items: WallmountedItem[];
   selectedItem?: string;
   loading: boolean;
 }
@@ -32,8 +33,8 @@ interface TransformData {
   source?: string;
 }
 
-export const HousewareTab = () => {
-  const [state, setState] = useSetState<HousewareState>({
+export const WallmountedItemTab = () => {
+  const [state, setState] = useSetState<ItemState>({
     loading: false,
     items: [],
   });
@@ -42,7 +43,7 @@ export const HousewareTab = () => {
     (async () => {
       try {
         setState({ loading: true });
-        const items = fetchAsync<HousewareItem[][]>(ApiUrl.Houseware);
+        const items = fetchAsync<WallmountedItem[][]>(ApiUrl.Wallmounted);
         if (isMounted) setState({ items: (await items).flat() });
       } catch (error) {
         toast.error("Error getting houseware items");

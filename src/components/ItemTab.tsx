@@ -63,7 +63,7 @@ export function ItemTab<T extends AnimalCrossingMonthlyItem>({
       if (params.data?.month) {
         return (
           (item["availability"]["month-array-northern"]?.indexOf(
-            params.data.month
+            params.data?.month
           ) ?? -1) >= 0
         );
       }
@@ -76,6 +76,7 @@ export function ItemTab<T extends AnimalCrossingMonthlyItem>({
   >({
     list: state?.items ?? new Array<T>(),
     transform: [filterByProperty],
+    onLoading: (loading) => setState({ loading: loading }),
   });
 
   const searchRef = React.createRef<Typeahead<string>>();

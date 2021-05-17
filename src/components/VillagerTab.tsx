@@ -72,6 +72,7 @@ export const VillagerTab = () => {
   >({
     list: state?.villagers ?? new Array<Villager>(),
     transform: [filterByProperty],
+    onLoading: (loading) => setState({ loading: loading }),
   });
 
   const searchRef = React.createRef<Typeahead<string>>();

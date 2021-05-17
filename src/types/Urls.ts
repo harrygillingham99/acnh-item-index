@@ -4,4 +4,5 @@ export enum ApiUrl {
   SeaCreatures = "http://acnhapi.com/v1a/sea",
   Villagers = "http://acnhapi.com/v1a/villagers",
   Houseware = "http://acnhapi.com/v1a/houseware",
+  Wallmounted = "http://acnhapi.com/v1a/wallmounted",
 }
