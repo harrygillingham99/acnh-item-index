@@ -1,5 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx lint-staged
-npx eslint --fix --ext .ts --ext .tsx src/
+npx lint-staged && npx eslint --fix --ext .ts --ext .tsx src/
