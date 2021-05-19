@@ -1,9 +1,6 @@
 import { useLocalStorage, useSetState } from "react-use";
 import { createContainer } from "unstated-next";
-import { StarredItem } from "../types/StarredItem";
-interface StarredItems {
-  items: StarredItem[];
-}
+import { StarredItem, StarredItems } from "../types/StarredItem";
 
 const useStarContainer = () => {
   const [value, setValue, remove] = useLocalStorage<StarredItems>(
