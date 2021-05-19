@@ -19,6 +19,7 @@ import fetchAsync from "../utils/Fetch";
 import { Loader } from "../components/Loader";
 import { toast } from "react-toastify";
 import { ApiUrl } from "../types/Urls";
+import { StarButton } from "./StarButton";
 
 interface VillagerState {
   villagers: Villager[];
@@ -176,6 +177,14 @@ export const VillagerTab = () => {
                         Catch phrase: {villager["catch-phrase"]}
                       </ListGroupItem>
                     </ListGroup>
+                    <Card.Footer>
+                      <StarButton
+                        itemInfo={{
+                          itemLookupId: villager.id.toString(),
+                          itemType: "villagers",
+                        }}
+                      />
+                    </Card.Footer>
                   </Card>
                 ))}
           </Col>

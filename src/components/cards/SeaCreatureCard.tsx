@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { SeaCreature } from "../../types/AHCN-API/SeaCreature";
+import { StarButton } from "../StarButton";
 
 export const SeaCreatureCard = (seaCreature: SeaCreature) => (
   <Card className="text-center" key={seaCreature.id}>
@@ -27,5 +28,13 @@ export const SeaCreatureCard = (seaCreature: SeaCreature) => (
         Availability: {JSON.stringify(seaCreature.availability)}
       </ListGroupItem>
     </ListGroup>
+    <Card.Footer>
+      <StarButton
+        itemInfo={{
+          itemLookupId: seaCreature.id.toString(),
+          itemType: "sea",
+        }}
+      />
+    </Card.Footer>
   </Card>
 );

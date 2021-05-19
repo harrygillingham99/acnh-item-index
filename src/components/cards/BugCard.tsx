@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Bug } from "../../types/AHCN-API/Bug";
+import { StarButton } from "../StarButton";
 
 export const BugCard = (bug: Bug) => (
   <Card className="text-center" key={bug.id}>
@@ -26,5 +27,13 @@ export const BugCard = (bug: Bug) => (
         Availability: {JSON.stringify(bug.availability)}
       </ListGroupItem>
     </ListGroup>
+    <Card.Footer>
+      <StarButton
+        itemInfo={{
+          itemLookupId: bug.id.toString(),
+          itemType: "bugs",
+        }}
+      />
+    </Card.Footer>
   </Card>
 );
