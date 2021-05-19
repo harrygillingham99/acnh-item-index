@@ -1,5 +1,6 @@
 import React from "react";
 import { ListGroup, Row } from "react-bootstrap";
+import { X } from "react-bootstrap-icons";
 import { toast } from "react-toastify";
 import { useEffectOnce } from "react-use";
 import useSetState from "react-use/lib/useSetState";
@@ -86,7 +87,7 @@ export const StarredTab = () => {
   }) => (
     <ListGroup.Item className="p-1" key={`listItem-${i}`}>
       <Row>
-        <img className="icon-starred mt-2" src={iconUri} />
+        <img className="icon mr-2 mt-2" src={iconUri} />
         <div>
           <p className="mb-0">{topLine}</p>
           <p className="mb-0">{bottomLine}</p>
@@ -95,7 +96,10 @@ export const StarredTab = () => {
     </ListGroup.Item>
   );
   const emptyListItem = (emptyItem: string) => (
-    <ListGroup.Item>No {emptyItem}</ListGroup.Item>
+    <ListGroup.Item className="p-1">
+      <X className="mr-2 icon" />
+      No {emptyItem}
+    </ListGroup.Item>
   );
   return !state.loading ? (
     <ListGroup variant="flush">
