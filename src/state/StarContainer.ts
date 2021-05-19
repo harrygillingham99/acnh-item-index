@@ -42,7 +42,7 @@ const useStarContainer = () => {
   const isEqual = (a: StarredItem, b: StarredItem) =>
     a.itemLookupId === b.itemLookupId && a.itemType === b.itemType;
 
-  return { starItem, removeItem, clear, isStarred, items: value };
+  return { starItem, removeItem, clear, isStarred, items: starred };
 };
 
 export default createContainer(useStarContainer);
